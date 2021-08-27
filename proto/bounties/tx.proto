@@ -1,0 +1,13 @@
+syntax = "proto3";
+package dixitaniket.gitmony.bounties;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/dixitaniket/gitmony/x/bounties/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+}
+
+// this line is used by starport scaffolding # proto/tx/message

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package dixitaniket.gitmony.helloworld;
+
+option go_package = "github.com/dixitaniket/gitmony/x/helloworld/types";
+
+message HelloworldPacketData {
+    oneof packet {
+        NoData noData = 1;
+        // this line is used by starport scaffolding # ibc/packet/proto/field
+				IbcPostPacketData ibcPostPacket = 2; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+    }
+}
+
+message NoData {
+}
+
+// this line is used by starport scaffolding # ibc/packet/proto/message
+// IbcPostPacketData defines a struct for the packet payload
+message IbcPostPacketData {
+	  string title = 1;
+  string content = 2;
+}
+
+// IbcPostPacketAck defines a struct for the packet acknowledgment
+message IbcPostPacketAck {
+	  string postID = 1;
+}

@@ -1,0 +1,99 @@
+syntax = "proto3";
+package dixitaniket.gitmony.helloworld;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+// this line is used by starport scaffolding # 1
+import "helloworld/timeout_post.proto";
+import "helloworld/send_post.proto";
+import "helloworld/post.proto";
+
+option go_package = "github.com/dixitaniket/gitmony/x/helloworld/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // this line is used by starport scaffolding # 2
+
+	// Queries a timeoutPost by id.
+	rpc TimeoutPost(QueryGetTimeoutPostRequest) returns (QueryGetTimeoutPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/timeoutPost/{id}";
+	}
+
+	// Queries a list of timeoutPost items.
+	rpc TimeoutPostAll(QueryAllTimeoutPostRequest) returns (QueryAllTimeoutPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/timeoutPost";
+	}
+
+
+	// Queries a sendPost by id.
+	rpc SendPost(QueryGetSendPostRequest) returns (QueryGetSendPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/sendPost/{id}";
+	}
+
+	// Queries a list of sendPost items.
+	rpc SendPostAll(QueryAllSendPostRequest) returns (QueryAllSendPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/sendPost";
+	}
+
+
+	// Queries a post by id.
+	rpc Post(QueryGetPostRequest) returns (QueryGetPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/post/{id}";
+	}
+
+	// Queries a list of post items.
+	rpc PostAll(QueryAllPostRequest) returns (QueryAllPostResponse) {
+		option (google.api.http).get = "/dixitaniket/gitmony/helloworld/post";
+	}
+
+}
+
+// this line is used by starport scaffolding # 3
+message QueryGetTimeoutPostRequest {
+	uint64 id = 1;
+}
+
+message QueryGetTimeoutPostResponse {
+	TimeoutPost TimeoutPost = 1;
+}
+
+message QueryAllTimeoutPostRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTimeoutPostResponse {
+	repeated TimeoutPost TimeoutPost = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetSendPostRequest {
+	uint64 id = 1;
+}
+
+message QueryGetSendPostResponse {
+	SendPost SendPost = 1;
+}
+
+message QueryAllSendPostRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllSendPostResponse {
+	repeated SendPost SendPost = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPostRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPostResponse {
+	Post Post = 1;
+}
+
+message QueryAllPostRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPostResponse {
+	repeated Post Post = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

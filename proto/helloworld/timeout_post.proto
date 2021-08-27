@@ -1,0 +1,13 @@
+syntax = "proto3";
+package dixitaniket.gitmony.helloworld;
+
+option go_package = "github.com/dixitaniket/gitmony/x/helloworld/types";
+
+import "gogoproto/gogo.proto";
+
+message TimeoutPost {
+  string creator = 1;
+  uint64 id = 2;
+  string title = 3; 
+  string chain = 4; 
+}

@@ -14,3 +14,7 @@ client:
 faucet:
   name: bob
   coins: ["5token", "100000stake"]
+genisis:
+  chainid: "1"
+init:
+  home: "$HOME/.firstchain"

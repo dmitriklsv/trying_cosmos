@@ -1,0 +1,14 @@
+syntax = "proto3";
+package dixitaniket.gitmony.helloworld;
+
+option go_package = "github.com/dixitaniket/gitmony/x/helloworld/types";
+
+import "gogoproto/gogo.proto";
+
+message SendPost {
+  string creator = 1;
+  uint64 id = 2;
+  string postId = 3; 
+  string title = 4; 
+  string chain = 5; 
+}
